@@ -1,0 +1,13 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Lab2.ReferenceWindow"
+        Title="Syntax Reference — Custom Regular Language"
+        Width="560" Height="700"
+        MinWidth="420" MinHeight="400"
+        WindowStartupLocation="CenterOwner">
+    <ScrollViewer>
+        <StackPanel x:Name="SectionsPanel"
+                    Margin="20,16,20,20"
+                    Spacing="6"/>
+    </ScrollViewer>
+</Window>

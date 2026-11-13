@@ -1,0 +1,59 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="using:Lab2"
+        x:Class="Lab2.MainWindow"
+        Title="Regular Expression Checker"
+        Width="860" Height="640"
+        MinWidth="560" MinHeight="440"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="16" RowDefinitions="Auto,Auto,Auto,Auto,*,Auto">
+        <Grid Grid.Row="0" ColumnDefinitions="*,Auto">
+            <TextBlock Grid.Column="0"
+                       Text="Regular expression (custom language):"
+                       FontWeight="SemiBold"
+                       VerticalAlignment="Center"/>
+            <Button Grid.Column="1" x:Name="ReferenceButton"
+                    Content="?"
+                    Padding="11,2"
+                    ToolTip.Tip="Syntax reference"
+                    Click="OnReferenceClick"/>
+        </Grid>
+
+        <TextBox Grid.Row="1" x:Name="PatternBox"
+                 Margin="0,6,0,12"
+                 PlaceholderText="e.g. ^column-\d{2,4}$"/>
+
+        <Button Grid.Row="2" x:Name="CheckButton"
+                Content="Check"
+                HorizontalAlignment="Left"
+                Padding="20,7"
+                Click="OnCheckClick"/>
+
+        <TextBlock Grid.Row="3"
+                   Margin="0,14,0,6"
+                   FontWeight="SemiBold"
+                   Text="String (text) to search in:"/>
+
+        <Grid Grid.Row="4" Margin="0,0,0,12">
+            <local:HighlightOverlay x:Name="Overlay"/>
+            <TextBox x:Name="InputTextBox"
+                     Background="Transparent"
+                     AcceptsReturn="True"
+                     AcceptsTab="True"
+                     TextWrapping="Wrap"
+                     ScrollViewer.VerticalScrollBarVisibility="Auto"
+                     PlaceholderText="paste your text here…"/>
+        </Grid>
+
+        <Border Grid.Row="5"
+                x:Name="StatusBorder"
+                CornerRadius="6"
+                Padding="12,9"
+                Background="#EFF1F4">
+            <TextBlock x:Name="StatusText"
+                       Foreground="#55606E"
+                       TextWrapping="Wrap"
+                       Text="Enter an expression and a string, then click &quot;Check&quot;."/>
+        </Border>
+    </Grid>
+</Window>
